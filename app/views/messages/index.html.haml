@@ -1,0 +1,186 @@
+.flash
+  チャットグループが作成されました。
+.contents
+
+  .side
+    .header-side
+      username
+      .header-menu
+        =link_to do
+          %i.fas.fa-edit
+        =link_to do
+          %i.fa.fa-cog
+
+    .side-menu
+      %ul
+        %li
+          =link_to do
+            .side-menu__group
+              groupA
+            .side-menu__text
+              hoge
+        %li
+          =link_to do
+            .side-menu__group
+              groupB
+            .side-menu__text
+              huge
+        %li
+          =link_to do
+            .side-menu__group
+              groupC
+            .side-menu__text
+              hage
+        %li
+          =link_to do
+            .side-menu__group
+              groupA
+            .side-menu__text
+              hoge
+        %li
+          =link_to do
+            .side-menu__group
+              groupB
+            .side-menu__text
+              huge
+        %li
+          =link_to do
+            .side-menu__group
+              groupC
+            .side-menu__text
+              hage
+        %li
+          =link_to do
+            .side-menu__group
+              groupA
+            .side-menu__text
+              hoge
+        %li
+          =link_to do
+            .side-menu__group
+              groupB
+            .side-menu__text
+              huge
+        %li
+          =link_to do
+            .side-menu__group
+              groupC
+            .side-menu__text
+              hage
+        %li
+          =link_to do
+            .side-menu__group
+              groupA
+            .side-menu__text
+              hoge
+        %li
+          =link_to do
+            .side-menu__group
+              groupB
+            .side-menu__text
+              huge
+        %li
+          =link_to do
+            .side-menu__group
+              groupC
+            .side-menu__text
+              hage
+        %li
+          =link_to do
+            .side-menu__group
+              groupA
+            .side-menu__text
+              hoge
+
+  .main
+    .header-main
+      .header-main__group
+        groupname
+      .header-main__users
+        username
+      =link_to do
+        .header-main__edit
+          Edit
+
+    .messages
+      %ul
+        %li
+          .messages__user
+            userA
+            %span.time time
+          .messages__text
+            hage
+        %li
+          .messages__user
+            userB
+            %span.time time
+          .messages__text
+            huge
+        %li
+          .messages__user
+            userA
+            %span.time time
+          .messages__text
+            hoge
+        %li
+          .messages__user
+            userC
+            %span.time time
+          .messages__text
+            hege
+        %li
+          .messages__user
+            userA
+            %span.time time
+          .messages__text
+            hage
+        %li
+          .messages__user
+            userB
+            %span.time time
+          .messages__text
+            huge
+        %li
+          .messages__user
+            userA
+            %span.time time
+          .messages__text
+            hoge
+        %li
+          .messages__user
+            userC
+            %span.time time
+          .messages__text
+            hege
+        %li
+          .messages__user
+            userA
+            %span.time time
+          .messages__text
+            hage
+        %li
+          .messages__user
+            userB
+            %span.time time
+          .messages__text
+            huge
+        %li
+          .messages__user
+            userA
+            %span.time time
+          .messages__text
+            hoge
+        %li
+          .messages__user
+            userC
+            %span.time time
+          .messages__text
+            hege
+      %form{method: :post}
+        %input{class: "form__text",name: :message, type: :text, placeholder: "text"}
+        .label-box
+          %label{class: "form__img",for: "file_photo"}
+            %i.far.fa-picture-o
+            %input{class: "form__img--alert",type: "file", id: "file_photo"}
+        %input{class: "form__button", type: :submit, value: :Send}
+

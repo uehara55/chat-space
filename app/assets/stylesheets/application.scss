@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+@import "reset";
+@import "variable";
+@import "font-awesome";
+
+
+
+.flash {
+  background-color: $buttonBlueColor;
+  color: $sideWhiteColor;
+  text-align: center;
+}
+
+.contents {
+  display: flex;
+}
+
+.side {
+  color: $sideWhiteColor;
+  width: 300px;
+  .header-side {
+    background-color: #253141;
+    font-size: 16px;
+    font-weight: bold;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    .header-menu{
+      float: right;
+      i {
+        color: $sideWhiteColor;
+        text-decoration: none;
+      }
+    }
+  }
+  .side-menu {
+    background-color: $sideMenuDarkBluerColor;
+    font-size: 15px;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    padding: 20px 20px 0;
+    .side-menu__group {
+      color: $sideWhiteColor;
+    }
+    .side-menu__text {
+      color: $sideWhiteColor;
+      font-size: 11px;
+      margin: 5px 0 40px;
+    }
+  }
+}
+
+
+.main {
+  width: calc(100vw - 300px);
+  .header-main {
+    border-bottom: 1px solid #eee;
+    height: 100px;
+    padding: 0 20px;
+    position: relative;
+    .header-main__group {
+      font-size: 20px;
+      margin-bottom: 15px;
+      padding-top: 35px;
+    }
+    .header-main__users {
+      color: $mainLightGrayColor;
+      font-size: 12px;
+    }
+    .header-main__edit {
+      border:1px solid $buttonBlueColor;
+      color: $buttonBlueColor;
+      height:40px;
+      line-height: 40px;
+      padding: 0 20px;
+      position: absolute;
+        top: 28px;
+        right: 60px;
+      text-decoration: none;
+    }
+  }
+  .messages {
+    background-color: #fafafa;
+    padding: 46px 20px 0px;
+    height: calc(100vh - 216px);
+    overflow-y: scroll;
+    position: relative;
+    .messages__user {
+      color:$mainDarkGrayColor;
+      font-size: 16px;
+      font-weight: bold;
+      span {
+        color: $mainLightGrayColor;
+        font-size: 14px;
+        font-weight: normal;
+        margin-left: 10px;
+      }
+    }
+    .messages__text {
+      margin: 10px 0 40px;
+    }
+    form {
+      background-color: #ddd;
+      display: flex;
+      position: fixed;
+        left: 300px;
+        right: 0;
+        bottom: 0;
+      padding: 20px 40px 20px 50px;
+      .form__text {
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+        border: none;
+        padding: 0 10px;
+      }
+      .label-box {
+        position: relative;
+        .form__img {
+          font-size: 20px;
+          height: 50px;
+          line-height: 50px;
+          position: absolute;
+            width: 10px;
+            left: -30px;
+        }
+          .form__img--alert {
+            display: none;
+          }
+      }
+      .form__button {
+        background-color: $buttonBlueColor;
+        color: $sideWhiteColor;
+        height: 50px;
+        line-height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
+  }
+}
