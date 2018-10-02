@@ -1,5 +1,4 @@
-/ .flash
-/   チャットグループが作成されました。
+
 .contents
 
   .side
@@ -13,6 +12,13 @@
 
     .side-menu
       %ul
+        - current_user.groups.each do |group|
+          %li
+            = link_to group_messages_path(group) do
+              .side-menu__group
+                = group.name
+              .side-menu__text
+                メッセージはまだありません。
         %li
           =link_to do
             .side-menu__group

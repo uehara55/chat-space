@@ -31,10 +31,6 @@
     padding: 0 20px;
     .header-menu{
       float: right;
-      i {
-        color: $sideWhiteColor;
-        text-decoration: none;
-      }
     }
   }
   .side-menu {
@@ -43,16 +39,17 @@
     height: calc(100vh - 100px);
     overflow-y: scroll;
     padding: 20px 20px 0;
-    .side-menu__group {
-      color: $sideWhiteColor;
-    }
-    .side-menu__text {
-      color: $sideWhiteColor;
-      font-size: 11px;
-      margin: 5px 0 40px;
-    }
+      .side-menu__group {
+        color: $sideWhiteColor;
+        }
+      }
+      .side-menu__text {
+        color: $sideWhiteColor;
+        font-size: 11px;
+        margin: 5px 0 40px;
+      }
   }
-}
+
 
 
 .main {
@@ -80,7 +77,6 @@
       position: absolute;
         top: 28px;
         right: 60px;
-      text-decoration: none;
     }
   }
   .messages {
