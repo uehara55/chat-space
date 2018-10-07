@@ -10,184 +10,31 @@
         =link_to edit_user_registration_path do
           %i.fa.fa-cog
 
-    .side-menu
-      %ul
-        - current_user.groups.each do |group|
-          %li
-            = link_to group_messages_path(group) do
-              .side-menu__group
-                = group.name
-              .side-menu__text
-                = group.show_last_message
-        %li
-          =link_to do
-            .side-menu__group
-              groupA
-            .side-menu__text
-              hoge
-        %li
-          =link_to do
-            .side-menu__group
-              groupB
-            .side-menu__text
-              huge
-        %li
-          =link_to do
-            .side-menu__group
-              groupC
-            .side-menu__text
-              hage
-        %li
-          =link_to do
-            .side-menu__group
-              groupA
-            .side-menu__text
-              hoge
-        %li
-          =link_to do
-            .side-menu__group
-              groupB
-            .side-menu__text
-              huge
-        %li
-          =link_to do
-            .side-menu__group
-              groupC
-            .side-menu__text
-              hage
-        %li
-          =link_to do
-            .side-menu__group
-              groupA
-            .side-menu__text
-              hoge
-        %li
-          =link_to do
-            .side-menu__group
-              groupB
-            .side-menu__text
-              huge
-        %li
-          =link_to do
-            .side-menu__group
-              groupC
-            .side-menu__text
-              hage
-        %li
-          =link_to do
-            .side-menu__group
-              groupA
-            .side-menu__text
-              hoge
-        %li
-          =link_to do
-            .side-menu__group
-              groupB
-            .side-menu__text
-              huge
-        %li
-          =link_to do
-            .side-menu__group
-              groupC
-            .side-menu__text
-              hage
-        %li
-          =link_to do
-            .side-menu__group
-              groupA
-            .side-menu__text
-              hoge
+    = render 'shared/side_bar'
 
   .main
     .header-main
       .header-main__group
-        groupname
+        = @group.name
       .header-main__users
-        username
-      =link_to do
+        = current_user.name
+      =link_to 'edit' do
         .header-main__edit
           Edit
 
     .messages
       %ul
-        %li
-          .messages__user
-            userA
-            %span.time time
-          .messages__text
-            hage
-        %li
-          .messages__user
-            userB
-            %span.time time
-          .messages__text
-            huge
-        %li
-          .messages__user
-            userA
-            %span.time time
-          .messages__text
-            hoge
-        %li
-          .messages__user
-            userC
-            %span.time time
-          .messages__text
-            hege
-        %li
-          .messages__user
-            userA
-            %span.time time
-          .messages__text
-            hage
-        %li
-          .messages__user
-            userB
-            %span.time time
-          .messages__text
-            huge
-        %li
-          .messages__user
-            userA
-            %span.time time
-          .messages__text
-            hoge
-        %li
-          .messages__user
-            userC
-            %span.time time
-          .messages__text
-            hege
-        %li
-          .messages__user
-            userA
-            %span.time time
-          .messages__text
-            hage
-        %li
-          .messages__user
-            userB
-            %span.time time
-          .messages__text
-            huge
-        %li
-          .messages__user
-            userA
-            %span.time time
-          .messages__text
-            hoge
-        %li
-          .messages__user
-            userC
-            %span.time time
-          .messages__text
-            hege
+        = render @messages
+
 
       .form
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__text', placeholder: 'type a message'
-          .label-box
-            = f.label :image, class: 'form__img' do
-              = fa_icon 'picture-o'
-              = f.file_field :image, class: 'form__img--alert'
-          = f.submit 'Send', class: 'form__button'
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__text', placeholder: 'type a message'
+        .label-box
+          = f.label :image, class: 'form__img' do
+            = fa_icon 'picture-o'
+            = f.file_field :image, class: 'form__img--alert'
+        = f.submit 'Send', class: 'form__button'
+
+
+
