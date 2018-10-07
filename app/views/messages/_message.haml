@@ -1,0 +1,11 @@
+%li
+  .messages__user
+    = message.user.name
+    %span.time
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .messages__text
+    - if message.content.present?
+      = message.content
+  .messages___img
+    - if message.image.present?
+      = image_tag message.image.url

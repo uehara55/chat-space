@@ -9,14 +9,9 @@
 
 
 
-.flash {
-  background-color: $buttonBlueColor;
-  color: $sideWhiteColor;
-  text-align: center;
-}
-
 .contents {
   display: flex;
+  height: 100vh;
 }
 
 .side {
@@ -49,8 +44,6 @@
         margin: 5px 0 40px;
       }
   }
-
-
 
 .main {
   width: calc(100vw - 300px);
@@ -98,6 +91,9 @@
     }
     .messages__text {
       margin: 10px 0 40px;
+    }
+    .messages___img img{
+      width: 200px;
     }
     form {
       background-color: #ddd;
