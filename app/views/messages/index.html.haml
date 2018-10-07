@@ -183,11 +183,11 @@
           .messages__text
             hege
 
-      / %form{method: :post}
-      /   %input{class: "form__text",name: :message, type: :text, placeholder: "text"}
-      /   .label-box
-      /     %label{class: "form__img",for: "file_photo"}
-      /       %i.far.fa-picture-o
-      /       %input{class: "form__img--alert",type: "file", id: "file_photo"}
-      /   %input{class: "form__button", type: :submit, value: :Send}
-
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__text', placeholder: 'type a message'
+          .label-box
+            = f.label :image, class: 'form__img' do
+              = fa_icon 'picture-o'
+              = f.file_field :image, class: 'form__img--alert'
+          = f.submit 'Send', class: 'form__button'
