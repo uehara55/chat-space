@@ -1,7 +1,5 @@
 $(function(){
 
-
-
   function buildHTML(message){
     var html = `<li>
                   <div class="messages__user">
@@ -21,7 +19,7 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
@@ -35,12 +33,12 @@ $(function(){
       $('.messages ul').append(html);
       $('img').css("width","200px");
       $('img[src="null"]').hide();
-
-      $('.messages').animate({scrollTop: 100000000},"fast");
-
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      $('.form__button').prop('disabled', false);
     })
     .fail(function(){
       alert('error');
     })
-  })
+  });
+
 });
