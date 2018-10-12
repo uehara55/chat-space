@@ -53,7 +53,7 @@ $(function(){
 
   var interval = setInterval(function(){
 
-    var present_MessageId = $('.messages ul li:last-child').attr('id')
+    var presentMessageId = $('.messages ul li:last-child').attr('id')
     var presentHTML = window.location.href
 
     if (presentHTML.match(/\/groups\/\d+\/messages/)) {
@@ -61,7 +61,7 @@ $(function(){
       $.ajax ({
         url: presentHTML,
         type: 'GET',
-        data: {id: present_MessageId},
+        data: {id: presentMessageId},
         dataType: 'json',
         processData: false,
         contentType: false
@@ -70,7 +70,7 @@ $(function(){
       .done(function(json){
         var insertHTML = "";
         json.forEach(function(message){
-          if (message.id > present_MessageId){
+          if (message.id > presentMessageId){
             insertHTML += buildHTML(message);
             $('.messages ul').append(insertHTML);
             $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
