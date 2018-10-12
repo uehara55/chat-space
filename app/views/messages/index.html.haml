@@ -17,7 +17,9 @@
       .header-main__group
         = @group.name
       .header-main__users
-        = current_user.name
+        Member:
+        - @group.users.each do |user|
+          = user.name + " "
       =link_to 'edit' do
         .header-main__edit
           Edit
