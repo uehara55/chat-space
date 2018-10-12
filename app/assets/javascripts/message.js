@@ -12,7 +12,7 @@ $(function(){
       var messageImg = ""
     }
 
-    var html = `<li>
+    var html = `<li id="${message.id}">
                   <div class="messages__user">
                     ${message.name}
                     <span class="time">${message.created_at}</span>
@@ -50,5 +50,41 @@ $(function(){
       alert('error');
     })
   });
+
+  var interval = setInterval(function(){
+
+    var present_MessageId = $('.messages ul li:last-child').attr('id')
+    var presentHTML = window.location.href
+
+    if (presentHTML.match(/\/groups\/\d+\/messages/)) {
+
+      $.ajax ({
+        url: presentHTML,
+        type: 'GET',
+        data: {id: present_MessageId},
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+
+      .done(function(json){
+        var insertHTML = "";
+        json.forEach(function(message){
+          if (message.id > present_MessageId){
+            insertHTML += buildHTML(message);
+            $('.messages ul').append(insertHTML);
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+          }
+        });
+      })
+
+      .fail(function(data){
+        alert('error')
+      });
+
+    } else {
+      clearInterval(interval)
+    }
+  },5000);
 
 });
