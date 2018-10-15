@@ -45,6 +45,7 @@ $(function(){
       $('img').css("width","200px");
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       $('.form__button').prop('disabled', false);
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert('error');
